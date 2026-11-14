@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Antalya Oto Servis & Galeri UGC Video ve Reklam Videosu | Antalya UGC</title>
+<meta name="description" content="Antalya'daki oto servis, yıkama, kaplama ve galeriler için gerçek kişilerle çekilmiş UGC reklam videoları. Senaryo, çekim, kurgu ve reklam tek pakette.">
+<meta name="theme-color" content="#E30613">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E30613'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'%3EAU%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Antalya UGC", "telephone": "+90 542 218 48 41", "address": {"@type": "PostalAddress", "addressLocality": "Antalya", "addressCountry": "TR"}, "parentOrganization": {"@type": "Organization", "name": "Özkan Dijital", "url": "https://www.ozkandijital.com.tr/"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Servis ortamı dağınık, sorun olur mu?", "acceptedAnswer": {"@type": "Answer", "text": "Olmaz, gerçek ortam güven veriyor. Sadece çekim açısını ve ışığı ayarlıyoruz."}}, {"@type": "Question", "name": "Galeri araçları sürekli değişiyor, nasıl yapacağız?", "acceptedAnswer": {"@type": "Answer", "text": "Aylık pakette gelen araçlara göre kısa tur videoları çekiyoruz. Satılan aracın videosu galerinin genel tanıtımında kullanılmaya devam ediyor."}}, {"@type": "Question", "name": "Çekim ne kadar sürüyor?", "acceptedAnswer": {"@type": "Answer", "text": "Video sayısına göre 1–3 saat. Çalışma saatlerini aksatmayacak bir zamana birlikte planlıyoruz."}}, {"@type": "Question", "name": "Ödeme nasıl?", "acceptedAnswer": {"@type": "Answer", "text": "Sitede online ödeme yok. Paketi WhatsApp'tan netleştiriyoruz, ödeme havale/EFT ile çekim planlanmadan önce alınıyor."}}]}]</script>
+<style>
+:root{
+  --red:#E30613;
+  --red-dark:#C00510;
+  --magenta:#FF4D8D;
+  --white:#FFFFFF;
+  --ink:#1F1B18;
+  --ink-soft:#5C5752;
+  --line:#ECEAE7;
+  --soft:#F7F5F3;
+  --ft:#F4F1EC;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grad:radial-gradient(70% 90% at 95% 90%,#FF4D8D 0%,rgba(255,77,141,0) 55%),radial-gradient(80% 100% at 60% 110%,#E30613 0%,rgba(227,6,19,0) 60%),linear-gradient(170deg,#140507 0%,#4A0712 60%,#9B0618 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'General Sans',system-ui,sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,video{max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:16px}
+.container{max-width:1320px;margin:0 auto;padding:0 20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);display:inline-block;flex-shrink:0}
+
+.hdr-wrap{position:sticky;top:0;z-index:50;padding:12px 12px 0}
+.hdr{max-width:1320px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:999px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 7px 0 20px;transition:box-shadow .25s}
+.hdr.scrolled{box-shadow:0 10px 30px -18px rgba(31,27,24,.25)}
+.logo{font-weight:700;font-size:22px;letter-spacing:-.04em;white-space:nowrap}
+.logo b{color:var(--red);font-weight:700}
+.nav{display:none;gap:6px;font-size:16px;font-weight:500;color:#3A3530}
+.nav a{white-space:nowrap;transition:color .2s,background .2s;padding:9px 16px;border-radius:999px}
+.nav a:hover{color:var(--red)}
+.nav a.active{background:var(--red);color:#fff}
+.right{display:flex;align-items:center;gap:8px;min-width:0}
+.creator-link{display:none;align-items:center;gap:8px;font-size:16px;font-weight:500;margin-right:10px;white-space:nowrap}
+.creator-link:hover,.creator-link.active{color:var(--red)}
+.lang{position:relative;display:none}
+.lang-btn{display:flex;align-items:center;gap:10px;height:48px;padding:0 18px 0 22px;border-radius:999px;border:1.5px solid #D9D6D0;background:var(--white);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer}
+.lang-btn svg{width:14px;height:14px;transition:transform .2s}
+.lang.open .lang-btn svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;right:0;top:56px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:6px;min-width:150px;box-shadow:0 18px 40px -20px rgba(31,27,24,.3);display:none}
+.lang.open .lang-menu{display:block}
+.lang-menu a{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;font-size:15px;font-weight:500}
+.lang-menu a:hover{background:var(--soft)}
+.lang-menu a span{color:var(--ink-soft);font-size:13px}
+.cta{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 20px;border-radius:999px;background:var(--red);color:#fff;font-size:15px;font-weight:600;white-space:nowrap;transition:background .2s}
+.cta:hover{background:var(--red-dark)}
+.burger{width:46px;height:46px;flex-shrink:0;border-radius:50%;border:1.5px solid #D9D6D0;background:var(--white);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.burger svg{width:20px;height:20px}
+.mob{display:none;max-width:1320px;margin:8px auto 0;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:8px 20px 20px;max-height:calc(100vh - 96px);overflow:auto;box-shadow:0 20px 40px -24px rgba(31,27,24,.3)}
+.mob.open{display:block}
+.mob > a{display:flex;align-items:center;gap:10px;padding:15px 0;font-size:17px;font-weight:500;border-bottom:1px solid var(--line)}
+.mob > a.active{color:var(--red);font-weight:600}
+.mob .langs{display:flex;gap:8px;margin-top:16px}
+.mob .langs a{border:1.5px solid #D9D6D0;border-radius:999px;padding:9px 16px;font-size:14px}
+.mob .langs a.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer;border:0;transition:background .2s,color .2s,border-color .2s}
+.btn svg{width:19px;height:19px;flex-shrink:0}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000}
+.btn-line{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-w{background:#fff;color:var(--ink)}
+.btn-w:hover{background:#F1EEEA}
+.btn-glass{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-glass:hover{background:rgba(255,255,255,.2)}
+
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--red);margin-bottom:16px}
+.kicker .dot{background:var(--red)}
+.h-xl{font-weight:600;font-size:clamp(38px,8.5vw,84px);line-height:1.02;letter-spacing:-.045em}
+.h-lg{font-weight:600;font-size:clamp(30px,5.6vw,54px);line-height:1.05;letter-spacing:-.04em}
+.h-xl span,.h-lg span{color:var(--red)}
+.lead{font-size:18px;line-height:1.55;color:var(--ink-soft);max-width:580px}
+.sec{padding-top:72px;padding-bottom:72px}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+
+.grad-box{background:var(--grad);border-radius:28px;color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.grad-box::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;mix-blend-mode:overlay;background-image:var(--grain);pointer-events:none}
+
+.cta-band{padding:0 12px}
+.cta-band .grad-box{max-width:1320px;margin:0 auto;padding:44px 24px;display:flex;flex-direction:column;gap:26px}
+.cta-band h2{font-weight:600;font-size:clamp(30px,6vw,56px);line-height:1.02;letter-spacing:-.04em;max-width:640px}
+.cta-band p{margin-top:14px;font-size:17px;line-height:1.5;color:rgba(255,255,255,.82);max-width:480px}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-size:17px;font-weight:600;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:34px;height:34px;flex-shrink:0;border-radius:50%;border:1.5px solid #D9D6D0;display:grid;place-items:center;transition:transform .25s,background .2s}
+.faq summary i svg{width:14px;height:14px}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--ink);border-color:var(--ink);color:#fff}
+.faq details p{padding:0 50px 22px 0;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+
+.site-ft{background:var(--ft);margin-top:72px;color:var(--ink)}
+.skyline{color:var(--red);padding:40px 0 0;overflow:hidden;display:flex;justify-content:center}
+.skyline-svg{overflow:visible;display:block;flex-shrink:0;width:max(660px,100%);max-width:1200px;height:auto}
+.ft-main{max-width:1320px;margin:0 auto;padding:44px 20px 0;display:grid;gap:44px}
+.ft-brand p{margin-top:12px;font-size:15px;line-height:1.55;color:var(--ink-soft);max-width:300px}
+.ft-card{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;max-width:340px}
+.ft-card b{display:block;font-size:16px;font-weight:600}
+.ft-card span{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;line-height:1.45}
+.ft-card .btn{width:100%;height:48px;margin-top:14px;font-size:15px}
+.ft-card .tel{display:block;text-align:center;margin-top:10px;font-size:14px;font-weight:600}
+.ft-badge{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:500;color:var(--ink-soft)}
+.ft-badge b{color:var(--ink);font-weight:600}
+.ft-badge{transition:border-color .2s,box-shadow .2s}
+.ft-badge:hover{border-color:var(--red);box-shadow:0 8px 20px -14px rgba(227,6,19,.5)}
+.ft-badge:hover b{color:var(--red)}
+.ft-badge svg{width:15px;height:15px;color:#9A938C}
+.ft-badge i{width:28px;height:28px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px}
+.ft-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}
+.ft-col h4{font-size:15px;font-weight:600;margin-bottom:16px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft-col a{font-size:14.5px;font-weight:500;color:#4A4540;line-height:1.35;transition:color .2s}
+.ft-col a:hover{color:var(--red)}
+.ft-col .new{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:#FFE1EC;color:#B0174F;vertical-align:1px}
+.ft-col .more{color:var(--red);font-weight:600}
+.social a{display:flex;align-items:center;gap:10px}
+.social svg{width:18px;height:18px;flex-shrink:0}
+.ft-areas{grid-column:1/-1}
+.chips-sm{display:flex;flex-wrap:wrap;gap:8px}
+.chips-sm a{font-size:13.5px;font-weight:500;padding:8px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#4A4540}
+.chips-sm a:hover{border-color:var(--red);color:var(--red)}
+.ft-bottom{max-width:1320px;margin:44px auto 0;padding:22px 20px 28px;border-top:1px solid #E2DDD6;display:flex;flex-direction:column;gap:12px;font-size:13.5px;font-weight:500;color:#7A746E}
+.ft-bottom .links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.ft-bottom a:hover{color:var(--ink)}
+
+.wa{position:fixed;right:14px;bottom:14px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -10px rgba(0,0,0,.35)}
+.wa svg{width:28px;height:28px}
+
+@media(min-width:640px){
+  .lang{display:block}
+  .cta{height:48px;padding:0 24px}
+  .ft-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:1080px){
+  .container{padding:0 32px}
+  .hdr-wrap{padding:18px 24px 0}
+  .hdr{height:76px;padding:0 10px 0 34px}
+  .nav{display:flex}
+  .creator-link{display:flex}
+  .burger{display:none}
+  .sec{padding-top:110px;padding-bottom:110px}
+  .sec-head{margin-bottom:48px}
+  .cta-band{padding:0 24px}
+  .cta-band .grad-box{flex-direction:row;justify-content:space-between;align-items:flex-end;padding:72px 56px;border-radius:40px}
+  .ft-main{grid-template-columns:320px 1fr;gap:64px;padding:56px 32px 0}
+  .ft-cols{grid-template-columns:repeat(5,minmax(0,1fr));gap:40px 28px}
+  .ft-areas{grid-column:span 2}
+  .ft-bottom{flex-direction:row;justify-content:space-between;align-items:center;padding:24px 32px 32px}
+}
+@media(max-width:380px){
+  .hdr{padding:0 6px 0 16px}
+  .logo{font-size:20px}
+  .cta{padding:0 14px;font-size:14px;height:44px}
+  .burger{width:44px;height:44px}
+  .btn{width:100%}
+}
+
+.skyline-svg .wave{animation:wave 6s linear infinite}
+.skyline-svg .w2{animation-duration:9s;animation-direction:reverse}
+@keyframes wave{to{transform:translateX(-44px)}}
+.skyline-svg .rays{transform-box:view-box;transform-origin:500px 62px;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.skyline-svg .sky-glow{transform-box:view-box;transform-origin:500px 62px;animation:pulse 5s ease-in-out infinite}
+.skyline-svg.pre .lm path,.skyline-svg.pre .lm rect,.skyline-svg.pre .lm circle{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s cubic-bezier(.65,.05,.25,1) calc(var(--d,0) * .17s)}
+.skyline-svg.drawn .lm path,.skyline-svg.drawn .lm rect,.skyline-svg.drawn .lm circle{stroke-dashoffset:0}
+.skyline-svg.pre .lm{opacity:0;transform:translateY(8px);transition:opacity .6s ease calc(var(--d,0) * .17s),transform .9s cubic-bezier(.2,.8,.2,1) calc(var(--d,0) * .17s)}
+.skyline-svg.drawn .lm{opacity:1;transform:none}
+.skyline-svg.pre .sun-core{fill-opacity:0;transition:fill-opacity .8s ease 1.4s}
+.skyline-svg.drawn .sun-core{fill-opacity:1}
+.skyline-svg.pre .sky-glow{opacity:0;animation:none}
+.skyline-svg.drawn .sky-glow{animation:glowIn 1s ease 1.3s both,pulse 5s ease-in-out 2.3s infinite}
+@keyframes glowIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.75}}
+.skyline-svg .boat{transform-box:fill-box;transform-origin:50% 100%;animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+.skyline-svg .palm path:last-child{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite}
+.skyline-svg .p2 path:last-child{animation-delay:-2s}
+@keyframes sway{50%{transform:rotate(3deg)}}
+.skyline-svg .flag{transform-box:fill-box;transform-origin:0 50%;animation:flag 1.6s ease-in-out infinite}
+@keyframes flag{50%{transform:scaleX(.82) skewY(4deg)}}
+.skyline-svg .birds path{animation:fly 7s ease-in-out infinite}
+.skyline-svg .b2{animation-delay:-1.5s}.skyline-svg .b3{animation-delay:-3s}.skyline-svg .b4{animation-delay:-4.5s}
+@keyframes fly{50%{transform:translate(10px,-6px)}}
+.skyline-svg .hand{transform-box:view-box;transform-origin:299px 106px;animation:spin 12s linear infinite}
+.on-dark .sun-core{fill:rgba(255,255,255,.18)}
+.on-dark .sky-glow{opacity:.6}
+.skyline{position:relative;background:radial-gradient(60% 90% at 42% 30%,rgba(255,77,141,.16),rgba(227,6,19,.06) 45%,transparent 70%)}
+.glow-hero{position:relative;isolation:isolate}
+.glow-hero::before{content:"";position:absolute;z-index:-1;left:var(--gx,50%);top:-140px;width:min(1100px,140vw);height:680px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,77,141,.30),rgba(227,6,19,.12) 50%,rgba(255,255,255,0) 100%);filter:blur(20px);pointer-events:none}
+.pill-sparkle{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid #E6DED6;color:#7A6F66;margin-bottom:22px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pill-sparkle svg{width:16px;height:16px;color:var(--red)}
+@media(prefers-reduced-motion:reduce){.skyline-svg *{animation:none!important}}
+main{overflow-x:clip}
+
+.sm{position:fixed;inset:0;z-index:100;display:flex;align-items:flex-end;justify-content:center}
+.sm[hidden]{display:none}
+.sm-back{position:absolute;inset:0;background:rgba(20,5,7,.45);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);animation:fadeIn .2s ease}
+.sm-box{position:relative;width:100%;max-height:92vh;overflow:auto;background:#fff;border-radius:28px 28px 0 0;padding:34px 20px calc(24px + env(safe-area-inset-bottom));text-align:center;animation:up .3s cubic-bezier(.2,.8,.2,1)}
+.sm-box h2{font-weight:600;font-size:clamp(28px,6vw,52px);letter-spacing:-.04em;line-height:1.05;padding:0 40px}
+.sm-box h2 span{color:var(--red)}
+.sm-box > p{margin:12px auto 0;font-size:16px;color:var(--ink-soft);max-width:440px;line-height:1.5}
+.sm-x{position:absolute;right:14px;top:14px;width:46px;height:46px;border-radius:14px;border:0;background:var(--soft);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:background .2s}
+.sm-x:hover{background:#ECE8E3}
+.sm-x svg{width:22px;height:22px}
+.sm-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+.sm-chip{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 18px;border-radius:999px;border:1.5px solid #DCD8D2;font-size:15.5px;font-weight:500;color:var(--ink);transition:border-color .2s,background .2s,color .2s}
+.sm-chip i{display:grid;place-items:center;color:var(--ink)}
+.sm-chip svg{width:19px;height:19px}
+.sm-chip:hover{border-color:var(--red);color:var(--red)}
+.sm-chip:hover i{color:var(--red)}
+.sm-wa{margin-top:24px}
+@media(max-width:759px){
+  .sm-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .sm-chip{height:48px;padding:0 12px;gap:8px;font-size:14px;justify-content:flex-start;text-align:left;line-height:1.15}
+  .sm-chip svg{width:17px;height:17px}
+  .sm-wa{width:100%}
+}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+body.sm-open{overflow:hidden}
+@media(min-width:760px){
+  .sm{align-items:center;padding:24px}
+  .sm-box{max-width:1000px;border-radius:32px;padding:56px 48px 48px}
+  .sm-x{right:22px;top:22px;width:54px;height:54px}
+  .sm-chips{gap:12px;margin-top:34px}
+  .sm-chip{height:56px;padding:0 24px;font-size:17px}
+  .sm-wa{margin-top:30px}
+}
+.pg-hero{padding-top:48px;padding-bottom:16px}
+.pg-hero .lead{margin-top:18px}
+.pg-hero .btn-row{margin-top:26px}
+.crumb{display:flex;flex-wrap:wrap;gap:6px;font-size:13.5px;font-weight:500;color:var(--ink-soft);margin-bottom:20px}
+.crumb a:hover{color:var(--red)}
+.crumb i{font-style:normal;opacity:.5}
+.soft{background:var(--soft)}
+.cards{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.card{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .n{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-weight:600;font-size:15px;background:#FDECEE;color:var(--red)}
+.card h3{font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.card p{font-size:15.5px;line-height:1.55;color:var(--ink-soft)}
+a.card{transition:border-color .2s,transform .2s}
+a.card:hover{border-color:var(--red);transform:translateY(-2px)}
+a.card .go{margin-top:auto;padding-top:6px;font-size:14.5px;font-weight:600;color:var(--red)}
+.script{border-radius:22px;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.script header{padding:18px 22px;border-bottom:1px solid var(--line)}
+.script header b{font-size:17px;font-weight:600;display:block}
+.script header span{font-size:13.5px;color:var(--ink-soft);font-weight:500}
+.script ol{list-style:none;padding:8px 22px 20px}
+.script li{padding:12px 0;border-bottom:1px dashed var(--line);font-size:15px;line-height:1.5}
+.script li:last-child{border-bottom:0}
+.script li em{display:block;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--red);margin-bottom:4px}
+.script li small{display:block;font-size:13.5px;color:var(--ink-soft);margin-top:4px}
+.faq-wrap{display:grid;gap:24px}
+.faq-wrap .lead{margin-top:14px}
+.prose{max-width:720px}
+.prose h2{font-size:clamp(23px,3.4vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.2;margin:44px 0 14px}
+.prose h3{font-size:19px;font-weight:600;margin:28px 0 10px}
+.prose p,.prose li{font-size:17px;line-height:1.75;color:#3A3530}
+.prose p+p{margin-top:16px}
+.prose ul,.prose ol{padding-left:22px;margin:14px 0;display:flex;flex-direction:column;gap:8px}
+.prose a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.prose strong{color:var(--ink);font-weight:600}
+.prose .note{margin:26px 0;padding:18px 20px;border-radius:16px;background:var(--soft);font-size:16px;line-height:1.6}
+.prose table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+.prose th,.prose td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.prose th{font-weight:600;background:var(--soft)}
+.tbl{overflow-x:auto;margin:0 -20px;padding:0 20px}
+.post-meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;font-weight:500;color:var(--ink-soft);margin-top:18px}
+.tag{display:inline-flex;align-self:flex-start;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;background:#FDECEE;color:var(--red)}
+.layout{display:grid;gap:40px}
+.aside{display:flex;flex-direction:column;gap:14px}
+.aside .grad-box{padding:26px;color:#fff;border-radius:22px}
+.aside .grad-box b{font-size:21px;font-weight:600;letter-spacing:-.02em;display:block;line-height:1.2}
+.aside .grad-box p{font-size:15px;line-height:1.5;color:rgba(255,255,255,.85);margin:10px 0 18px}
+.list-check{list-style:none;display:flex;flex-direction:column;gap:10px}
+.list-check li{display:flex;gap:10px;font-size:16px;line-height:1.5}
+.list-check li::before{content:"";flex-shrink:0;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.contact-grid{display:grid;gap:14px}
+.form{display:flex;flex-direction:column;gap:14px}
+.form label{font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:7px}
+.form input,.form select,.form textarea{font:inherit;font-size:16px;font-weight:500;padding:14px 16px;border-radius:14px;border:1.5px solid #D9D6D0;background:#fff;color:var(--ink);width:100%}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:var(--ink)}
+.form .err{border-color:var(--red)}
+.cta-band.mt{margin-top:24px;margin-bottom:72px}
+.nf{min-height:60vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.nf b{font-size:clamp(90px,20vw,180px);line-height:.9;letter-spacing:-.06em;font-weight:700;color:var(--red)}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){
+  .pg-hero{padding-top:96px;padding-bottom:24px}
+  .cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cards.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .faq-wrap{grid-template-columns:1fr 1.6fr;gap:64px}
+  .layout{grid-template-columns:minmax(0,1fr) 320px;gap:72px}
+  .aside{position:sticky;top:110px;align-self:start}
+  .tbl{margin:0;padding:0}
+  .contact-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:1079px){.aside{display:none}}
+
+
+</style>
+</head>
+<body data-page="/isletmeler">
+<div class="hdr-wrap">
+  <header class="hdr" id="hdr">
+    <a href="./" data-h="/" class="logo">antalya<b>ugc</b></a>
+    <nav class="nav">
+      <a href="isletmeler" data-h="/isletmeler" data-sm>İşletmeler İçin</a>
+      <a href="paketler" data-h="/paketler">Paketler</a>
+      <a href="calismalar" data-h="/calismalar">Çalışmalarımız</a>
+    </nav>
+    <div class="right">
+      <a href="icerik-ureticisi-ol" data-h="/icerik-ureticisi-ol" class="creator-link"><i class="dot"></i>İçerik üreticisi ol</a>
+      <div class="lang" id="lang">
+        <button class="lang-btn" type="button" id="langBtn">TR<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="lang-menu">
+          <a href="./" data-h="/">Türkçe <span>TR</span></a>
+          <a href="en" data-h="/en">English <span>EN</span></a>
+          <a href="ru" data-h="/ru">Русский <span>RU</span></a>
+        </div>
+      </div>
+      <a class="cta" href="https://wa.me/905422184841?text=Merhaba%2C%20UGC%20video%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener">Teklif al</a>
+      <button class="burger" type="button" aria-label="Menü" id="burger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+  </header>
+  <div class="mob" id="mob">
+    <a href="isletmeler" data-h="/isletmeler" data-sm>İşletmeler İçin</a>
+    <a href="paketler" data-h="/paketler">Paketler</a>
+    <a href="calismalar" data-h="/calismalar">Çalışmalarımız</a>
+    <a href="icerik-ureticisi-ol" data-h="/icerik-ureticisi-ol"><i class="dot"></i>İçerik üreticisi ol</a>
+    <div class="langs"><a href="./" data-h="/" class="on">TR</a><a href="en" data-h="/en">EN</a><a href="ru" data-h="/ru">RU</a></div>
+  </div>
+</div>
+<div class="sm" id="sm" role="dialog" aria-modal="true" aria-labelledby="smTitle" hidden>
+  <div class="sm-back" data-close></div>
+  <div class="sm-box">
+    <button class="sm-x" type="button" aria-label="Kapat" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="smTitle">Hangi <span>sektörde</span> çalışıyorsun?</h2>
+    <p>Sektörünü seç, sana benzeyen işletmeler için yaptıklarımızı göstereyim.</p>
+    <div class="sm-chips">
+        <a class="sm-chip" href="sektor-restoran-kafe" data-h="/sektor/restoran-kafe"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v6M3 3v6a4 4 0 0 0 4 4"/><path d="M17 21V3c2.5 1 4 4 4 8h-4"/></svg></i>Restoran & Kafe</a>
+        <a class="sm-chip" href="sektor-kuafor-guzellik" data-h="/sektor/kuafor-guzellik"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg></i>Kuaför & Güzellik</a>
+        <a class="sm-chip" href="sektor-otel-turizm" data-h="/sektor/otel-turizm"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V8l9-5 9 5v12"/><path d="M3 20h18M9 20v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></i>Otel & Turizm</a>
+        <a class="sm-chip" href="sektor-butik-magaza" data-h="/sektor/butik-magaza"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></i>Butik & Mağaza</a>
+        <a class="sm-chip" href="sektor-klinik-saglik" data-h="/sektor/klinik-saglik"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></i>Klinik & Sağlık</a>
+        <a class="sm-chip" href="sektor-gida-market" data-h="/sektor/gida-market"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1.5 1.5 0 0 0 1.5 1.1h8.4a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/></svg></i>Gıda & Market</a>
+        <a class="sm-chip" href="sektor-yerel-hizmetler" data-h="/sektor/yerel-hizmetler"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></i>Yerel Hizmetler</a>
+        <a class="sm-chip" href="sektor-e-ticaret" data-h="/sektor/e-ticaret"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M8 9l2.5 2.5L16 8"/></svg></i>E-ticaret</a>
+        <a class="sm-chip" href="sektor-egitim-kurs" data-h="/sektor/egitim-kurs"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg></i>Eğitim & Kurs</a>
+        <a class="sm-chip" href="sektor-emlak-insaat" data-h="/sektor/emlak-insaat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-5h4v5"/></svg></i>Emlak & İnşaat</a>
+        <a class="sm-chip" href="sektor-oto-servis" data-h="/sektor/oto-servis"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16H3v-4l2-5h14l2 5v4h-2"/><circle cx="7.5" cy="16.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/><path d="M9.5 16.5h5M4 12h16"/></svg></i>Oto & Servis</a>
+        <a class="sm-chip" href="isletmeler" data-h="/isletmeler">Diğer</a>
+    </div>
+    <a class="btn btn-ink sm-wa" href="https://wa.me/905422184841?text=Merhaba%2C%20i%C5%9Fletmem%20i%C3%A7in%20UGC%20video%20almak%20istiyorum." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Direkt konuşmak istiyorum</a>
+  </div>
+</div>
+
+<main>
+<section class="pg-hero glow-hero container">
+  <nav class="crumb"><a href="./" data-h="/">Ana sayfa</a><i>/</i><a href="isletmeler" data-h="/isletmeler">İşletmeler İçin</a><i>/</i><span>Oto Servis & Galeri</span></nav>
+  <span class="kicker"><i class="dot"></i>Oto Servis & Galeri için UGC</span>
+  <h1 class="h-xl">Aracını teslim ettiren güven videoları</h1>
+  <p class="lead">Arabasını servise bırakan kişi en çok kandırılmaktan korkuyor. Videoda yapılan işi açık açık görmek bu korkuyu siliyor.</p>
+  <div class="btn-row">
+    <a class="btn btn-red" href="https://wa.me/905422184841?text=Merhaba%2C%20Oto%20Servis%20%26%20Galeri%20i%C5%9Fletmem%20i%C3%A7in%20UGC%20video%20almak%20istiyorum." target="_blank" rel="noopener">Teklif al</a>
+    <a class="btn btn-line" href="calismalar" data-h="/calismalar">Örnekleri izle</a>
+  </div>
+</section>
+<section class="sec container">
+  <div class="sec-head"><span class="kicker"><i class="dot"></i>Sorun ne</span><h2 class="h-lg">Antalya'daki oto servis, yıkama, kaplama ve galeriler <span>neden zorlanıyor?</span></h2></div>
+  <div class="cards c3"><div class="card"><span class="n">1</span><h3>Usta ne yaptığını anlatamıyor</h3><p>İş görünür olmayınca fiyat pahalı geliyor. Videoda süreci göstermek fiyatı anlaşılır kılıyor.</p></div><div class="card"><span class="n">2</span><h3>Galeride araç fotoğrafı yetmiyor</h3><p>Motor sesi, iç detay ve test sürüşü videosu alıcıyı galeriye getiriyor.</p></div><div class="card"><span class="n">3</span><h3>Kaplama ve detay işleri görsel</h3><p>Seramik, cam filmi, kaplama; öncesi–sonrası videoyla satılıyor.</p></div></div>
+</section>
+<section class="sec soft">
+  <div class="container">
+    <div class="sec-head"><span class="kicker"><i class="dot"></i>Video fikirleri</span><h2 class="h-lg">Bu sektörde <span>işe yarayan</span> 3 kurgu</h2><p class="lead">Her video tek bir vaat ve onu destekleyen 2–3 sebep üzerine kurulu. Fiyat ya da ana avantaj hook'tan hemen sonra geliyor.</p></div>
+    <div class="cards c3"><article class="script"><header><b>İş öncesi–sonrası</b><span>Örnek senaryo</span></header><ol>
+<li><em>0–3 SN | HOOK</em>"Bu araba 4 saat önce buydu."</li><li><em>3–6 SN | VAAT</em>Ekran: Seramik kaplama, fiyat ve süre</li><li><em>6–18 SN | SEBEPLER</em>Pasta + cila dahil · 2 yıl dayanım · Aynı gün teslim</li><li><em>ÇEKİM</em><small>[Matlaşmış boya, işlem, parlayan sonuç]</small></li></ol></article><article class="script"><header><b>Neden buraya getiriyorum</b><span>Örnek senaryo</span></header><ol>
+<li><em>0–3 SN | HOOK</em>"Üç servis gezdim, burada parçayı önce gösterdiler."</li><li><em>3–6 SN | VAAT</em>Ekran: Ücretsiz arıza tespiti</li><li><em>6–18 SN | SEBEPLER</em>Değişen parça sana veriliyor · Faturalı · Yedek araç</li><li><em>ÇEKİM</em><small>[Lift, parça gösterimi, teslim]</small></li></ol></article><article class="script"><header><b>Galeri aracı</b><span>Örnek senaryo</span></header><ol>
+<li><em>0–3 SN | HOOK</em>"Bu fiyata bu kilometrede başka yok, gezdirelim."</li><li><em>3–6 SN | VAAT</em>Ekran: Fiyat + km + yıl</li><li><em>6–18 SN | SEBEPLER</em>Boyasız · Tramer temiz · Takas olur</li><li><em>ÇEKİM</em><small>[Dış tur, iç detay, motor, sürüş]</small></li></ol></article></div>
+  </div>
+</section>
+<section class="sec container">
+  <div class="sec-head"><span class="kicker"><i class="dot"></i>Pakete dahil</span><h2 class="h-lg">Senin işin sadece <span>onay vermek</span></h2></div>
+  <ul class="list-check" style="max-width:640px">
+    <li>İşletmene uygun senaryo ve hook alternatifleri</li>
+    <li>Antalyalı içerik üreticisi seçimi, sen onaylıyorsun</li>
+    <li>Mekanında çekim, kurgu, altyazı ve müzik</li>
+    <li>Reels, TikTok, Shorts ve reklam için 9:16 teslim</li>
+    <li>İstersen Meta reklam kurulumu ve yönetimi (Özkan Dijital)</li>
+  </ul>
+</section>
+<section class="sec container">
+  <div class="faq-wrap">
+    <div><span class="kicker"><i class="dot"></i>Sık sorulanlar</span><h2 class="h-lg">Oto Servis & Galeri <span>soruları</span></h2></div>
+    <div class="faq"><details><summary>Servis ortamı dağınık, sorun olur mu?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Olmaz, gerçek ortam güven veriyor. Sadece çekim açısını ve ışığı ayarlıyoruz.</p></details><details><summary>Galeri araçları sürekli değişiyor, nasıl yapacağız?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Aylık pakette gelen araçlara göre kısa tur videoları çekiyoruz. Satılan aracın videosu galerinin genel tanıtımında kullanılmaya devam ediyor.</p></details><details><summary>Çekim ne kadar sürüyor?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Video sayısına göre 1–3 saat. Çalışma saatlerini aksatmayacak bir zamana birlikte planlıyoruz.</p></details><details><summary>Ödeme nasıl?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Sitede online ödeme yok. Paketi WhatsApp'tan netleştiriyoruz, ödeme havale/EFT ile çekim planlanmadan önce alınıyor.</p></details></div>
+  </div>
+</section>
+<section class="container" style="padding-bottom:16px">
+  <span class="kicker"><i class="dot"></i>Diğer sektörler</span>
+  <div class="chips-sm"><a href="sektor-restoran-kafe" data-h="/sektor/restoran-kafe">Restoran & Kafe</a><a href="sektor-kuafor-guzellik" data-h="/sektor/kuafor-guzellik">Kuaför & Güzellik</a><a href="sektor-otel-turizm" data-h="/sektor/otel-turizm">Otel & Turizm</a><a href="sektor-butik-magaza" data-h="/sektor/butik-magaza">Butik & Mağaza</a><a href="sektor-klinik-saglik" data-h="/sektor/klinik-saglik">Klinik & Sağlık</a><a href="sektor-gida-market" data-h="/sektor/gida-market">Gıda & Market</a><a href="sektor-yerel-hizmetler" data-h="/sektor/yerel-hizmetler">Yerel Hizmetler</a><a href="sektor-e-ticaret" data-h="/sektor/e-ticaret">E-ticaret</a><a href="sektor-egitim-kurs" data-h="/sektor/egitim-kurs">Eğitim & Kurs</a><a href="sektor-emlak-insaat" data-h="/sektor/emlak-insaat">Emlak & İnşaat</a></div>
+</section>
+<section class="cta-band mt">
+  <div class="grad-box">
+    <div>
+      <h2>Oto Servis & Galeri işletmen için ilk videoyu konuşalım.</h2>
+      <p>Ne sattığını ve kime sattığını yaz, sana uygun video fikrini ve paketi çıkaralım.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-w" href="https://wa.me/905422184841?text=Merhaba%2C%20Oto%20Servis%20%26%20Galeri%20i%C5%9Fletmem%20i%C3%A7in%20UGC%20video%20hakk%C4%B1nda%20konu%C5%9Fmak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+      <a class="btn btn-glass" href="paketler" data-h="/paketler">Paketlere bak</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-ft">
+  <div class="skyline"><svg class="skyline-svg" viewBox="0 0 1200 250" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<defs>
+<radialGradient id="sg" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FF4D8D" stop-opacity=".55"/><stop offset=".45" stop-color="#E30613" stop-opacity=".18"/><stop offset="1" stop-color="#E30613" stop-opacity="0"/></radialGradient>
+<linearGradient id="sf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF4D8D" stop-opacity=".9"/><stop offset="1" stop-color="#E30613" stop-opacity=".9"/></linearGradient>
+<clipPath id="wc"><rect x="20" y="200" width="1160" height="50"/></clipPath>
+</defs>
+<circle class="sky-glow" cx="500" cy="62" r="95" fill="url(#sg)" stroke="none"/>
+<g class="lm" style="--d:0"><path d="M20 200 H1180"/></g>
+<g class="lm" style="--d:1"><g class="palm p1">
+<path d="M70 200 C72 170 74 145 82 118"/>
+<path d="M82 118 C70 108 56 110 46 120 M82 118 C78 104 66 96 54 96 M82 118 C90 104 104 98 116 102 M82 118 C96 112 108 116 116 128 M82 118 C84 106 92 96 100 92"/>
+</g></g>
+<g class="lm" style="--d:2">
+<path d="M120 200 V150 H232 V200"/>
+<path d="M132 150 V160 M148 150 V160 M164 150 V160 M188 150 V160 M204 150 V160 M220 150 V160" stroke-width="2"/>
+<path d="M142 150 V106 Q176 94 210 106 V150"/>
+<path d="M150 128 H202 M154 116 H198" stroke-width="2"/>
+<path d="M176 98 V70"/><path class="flag" d="M176 70 L196 76 L176 82"/>
+</g>
+<g class="lm" style="--d:3">
+<rect x="268" y="74" width="62" height="126" rx="1"/>
+<path d="M264 74 V60 H274 V68 H284 V60 H294 V68 H304 V60 H314 V68 H324 V60 H334 V74"/>
+<circle cx="299" cy="106" r="13"/>
+<path class="hand" d="M299 106 V98"/><path d="M299 106 L304 110"/>
+<path d="M299 60 V36"/><path class="flag" d="M299 36 L318 42 L299 48"/>
+<rect x="292" y="140" width="14" height="24" rx="7"/>
+</g>
+<g class="lm" style="--d:4">
+<path d="M386 112 H614 V128 H386 Z"/>
+<path d="M380 112 H620"/>
+<path d="M398 200 V128 M602 200 V128"/>
+<path d="M414 200 V160 A22 22 0 0 1 458 160 V200"/>
+<path d="M472 200 V156 A28 28 0 0 1 528 156 V200"/>
+<path d="M542 200 V160 A22 22 0 0 1 586 160 V200"/>
+</g>
+<g class="lm sun" style="--d:5">
+<circle cx="500" cy="62" r="24" fill="url(#sf)" class="sun-core"/>
+<g class="rays"><path d="M500 24 V14 M500 110 V100 M462 62 H452 M548 62 H538 M473 35 L466 28 M534 96 L527 89 M527 35 L534 28 M466 96 L473 89"/></g>
+</g>
+<g class="lm" style="--d:6">
+<path d="M666 200 V154 H706 V200"/>
+<path d="M672 154 V66 H700 V154"/>
+<path d="M679 70 V150 M686 70 V150 M693 70 V150" stroke-width="1.8"/>
+<path d="M666 66 H706 V58 H666 Z"/>
+<path d="M674 58 L686 26 L698 58"/>
+<path d="M686 26 V16"/>
+</g>
+<g class="lm" style="--d:7">
+<path d="M742 200 V152 H862 V200"/>
+<path d="M760 152 A42 42 0 0 1 844 152"/>
+<path d="M802 110 V96"/>
+<circle cx="802" cy="92" r="3"/>
+<rect x="760" y="168" width="10" height="16" rx="5"/><rect x="797" y="164" width="10" height="36" rx="5"/><rect x="834" y="168" width="10" height="16" rx="5"/>
+</g>
+<g class="lm" style="--d:8"><path d="M860 200 L905 150 L935 172 L985 112 L1030 160 L1065 132 L1115 186 L1140 172 L1180 200" stroke-width="2.5" opacity=".35"/></g>
+<g class="lm" style="--d:9"><g class="palm p2">
+<path d="M940 200 C941 178 944 160 950 140"/>
+<path d="M950 140 C940 132 928 134 920 142 M950 140 C946 128 936 122 926 122 M950 140 C958 128 970 124 980 128 M950 140 C962 134 972 138 978 148"/>
+</g></g>
+<g class="lm" style="--d:5">
+<g clip-path="url(#wc)">
+<path class="wave w1" d="M16 222 q22 -10 44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0"/>
+<path class="wave w2" d="M60 238 q22 -9 44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0" stroke-width="2" opacity=".55"/>
+</g>
+</g>
+<g class="lm" style="--d:10"><g class="boat">
+<path d="M1040 216 H1100 L1090 226 H1050 Z" stroke-width="2.5"/>
+<path d="M1068 216 V166 L1096 210 H1068" stroke-width="2.5"/>
+<path d="M1068 172 L1046 210 H1068" stroke-width="2.2"/>
+</g></g>
+<g class="lm birds" style="--d:11" stroke-width="2.2">
+<path class="b1" d="M230 40 l7 5 l7 -5"/><path class="b2" d="M256 30 l6 4 l6 -4"/><path class="b3" d="M600 46 l7 5 l7 -5"/><path class="b4" d="M1000 64 l6 4 l6 -4"/>
+</g>
+</svg></div>
+  <div class="ft-main">
+    <div class="ft-brand">
+      <a href="./" data-h="/" class="logo">antalya<b>ugc</b></a>
+      <p>Antalya'nın UGC stüdyosu. İşletmene müşteri getiren, reklam gibi durmayan videolar çekiyoruz.</p>
+      <div class="ft-card">
+        <b>Videonu konuşalım</b>
+        <span>Ne sattığını anlat, sana uygun senaryoyu ve paketi çıkaralım.</span>
+        <a class="btn btn-red" href="https://wa.me/905422184841?text=Merhaba%2C%20UGC%20video%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2z"/></svg>WhatsApp'tan yaz</a>
+        <a class="tel" href="tel:+905422184841">veya ara: 0542 218 48 41</a>
+      </div>
+      <a class="ft-badge" href="https://www.ozkandijital.com.tr/" target="_blank" rel="noopener"><i>ÖD</i><span>Bir <b>Özkan Dijital</b> markasıdır</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div>
+    <div class="ft-cols">
+      <div class="ft-col">
+        <h4>Sektörler</h4>
+        <ul>
+          <li><a href="sektor-restoran-kafe" data-h="/sektor/restoran-kafe">Restoran & Kafe</a></li>
+          <li><a href="sektor-kuafor-guzellik" data-h="/sektor/kuafor-guzellik">Kuaför & Güzellik</a></li>
+          <li><a href="sektor-otel-turizm" data-h="/sektor/otel-turizm">Otel & Turizm</a></li>
+          <li><a href="sektor-butik-magaza" data-h="/sektor/butik-magaza">Butik & Mağaza</a></li>
+          <li><a href="sektor-klinik-saglik" data-h="/sektor/klinik-saglik">Klinik & Sağlık</a></li>
+          <li><a href="sektor-gida-market" data-h="/sektor/gida-market">Gıda & Market</a></li>
+          <li><a href="sektor-yerel-hizmetler" data-h="/sektor/yerel-hizmetler">Yerel Hizmetler</a></li>
+          <li><a href="sektor-e-ticaret" data-h="/sektor/e-ticaret">E-ticaret</a></li>
+          <li><a href="sektor-egitim-kurs" data-h="/sektor/egitim-kurs">Eğitim & Kurs</a></li>
+          <li><a href="sektor-emlak-insaat" data-h="/sektor/emlak-insaat">Emlak & İnşaat</a></li>
+          <li><a href="sektor-oto-servis" data-h="/sektor/oto-servis">Oto & Servis</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Kaynaklar</h4>
+        <ul>
+          <li><a href="blog" data-h="/blog">Blog<span class="new">Yeni</span></a></li>
+          <li><a href="calismalar" data-h="/calismalar">Çalışmalarımız</a></li>
+          <li><a href="rehber-ugc-nedir" data-h="/rehber/ugc-nedir">UGC Nedir?</a></li>
+          <li><a href="rehber-senaryo-ornekleri" data-h="/rehber/senaryo-ornekleri">Senaryo Örnekleri</a></li>
+          <li><a href="sss" data-h="/sss">Sık Sorulan Sorular</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Blogdan</h4>
+        <ul>
+          <li><a href="blog-antalya-restoran-reklam-videosu" data-h="/blog/antalya-restoran-reklam-videosu">Antalya'da restoran reklam videosu nasıl çekilir?</a></li>
+          <li><a href="blog-antalya-kuafor-instagram-reklam" data-h="/blog/antalya-kuafor-instagram-reklam">Kuaförler için Instagram reklam videosu</a></li>
+          <li><a href="blog-antalya-otel-ugc-video" data-h="/blog/antalya-otel-ugc-video">Oteller için sezon öncesi UGC rehberi</a></li>
+          <li><a href="blog-ugc-mi-profesyonel-cekim-mi" data-h="/blog/ugc-mi-profesyonel-cekim-mi">UGC mi, profesyonel çekim mi?</a></li>
+          <li><a href="blog" data-h="/blog" class="more">Tüm yazılar →</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Antalya UGC</h4>
+        <ul>
+          <li><a href="hakkimizda" data-h="/hakkimizda">Hakkımızda</a></li>
+          <li><a href="isletmeler" data-h="/isletmeler">İşletmeler İçin</a></li>
+          <li><a href="paketler" data-h="/paketler">Paketler</a></li>
+          <li><a href="ureticiler" data-h="/ureticiler">Üreticilerimiz</a></li>
+          <li><a href="icerik-ureticisi-ol" data-h="/icerik-ureticisi-ol">İçerik Üreticisi Ol</a></li>
+          <li><a href="iletisim" data-h="/iletisim">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="ft-col social">
+        <h4>Bizi takip et</h4>
+        <ul>
+          <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Instagram</a></li>
+          <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/></svg>TikTok</a></li>
+          <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>YouTube</a></li>
+          <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a></li>
+        </ul>
+        <h4 style="margin-top:26px">İletişim</h4>
+        <ul>
+          <li><a href="tel:+905422184841">0542 218 48 41</a></li>
+          <li><a href="https://wa.me/905422184841" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="iletisim" data-h="/iletisim">Antalya, Türkiye</a></li>
+        </ul>
+      </div>
+      <div class="ft-col ft-areas">
+        <h4>Hizmet bölgeleri</h4>
+        <div class="chips-sm">
+          <a href="antalya-konyaalti-ugc-video" data-h="/antalya/konyaalti-ugc-video">Konyaaltı</a>
+          <a href="antalya-muratpasa-ugc-video" data-h="/antalya/muratpasa-ugc-video">Muratpaşa</a>
+          <a href="antalya-lara-ugc-video" data-h="/antalya/lara-ugc-video">Lara</a>
+          <a href="antalya-kepez-ugc-video" data-h="/antalya/kepez-ugc-video">Kepez</a>
+          <a href="antalya-dosemealti-ugc-video" data-h="/antalya/dosemealti-ugc-video">Döşemealtı</a>
+          <a href="antalya-aksu-ugc-video" data-h="/antalya/aksu-ugc-video">Aksu</a>
+          <a href="antalya-kemer-ugc-video" data-h="/antalya/kemer-ugc-video">Kemer</a>
+          <a href="antalya-belek-ugc-video" data-h="/antalya/belek-ugc-video">Belek</a>
+          <a href="antalya-side-manavgat-ugc-video" data-h="/antalya/side-manavgat-ugc-video">Side & Manavgat</a>
+          <a href="antalya-alanya-ugc-video" data-h="/antalya/alanya-ugc-video">Alanya</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 Antalya UGC · <a href="https://www.ozkandijital.com.tr/" target="_blank" rel="noopener">Özkan Dijital</a> markasıdır.</span>
+    <div class="links">
+      <a href="kvkk" data-h="/kvkk">KVKK Aydınlatma Metni</a>
+      <a href="gizlilik" data-h="/gizlilik">Gizlilik Politikası</a>
+      <a href="kullanim-kosullari" data-h="/kullanim-kosullari">Kullanım Koşulları</a>
+      <a href="uretici-sozlesmesi" data-h="/uretici-sozlesmesi">Üretici Sözleşmesi</a>
+    </div>
+  </div>
+</footer>
+<a class="wa" href="https://wa.me/905422184841?text=Merhaba%2C%20UGC%20video%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passive:true});
+const lang=document.getElementById('lang');
+document.getElementById('langBtn').addEventListener('click',e=>{e.stopPropagation();lang.classList.toggle('open')});
+document.addEventListener('click',e=>{if(!lang.contains(e.target))lang.classList.remove('open')});
+const mob=document.getElementById('mob');
+document.getElementById('burger').addEventListener('click',()=>mob.classList.toggle('open'));
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+const navLinks=document.querySelectorAll('.nav a,.mob > a,.creator-link');
+const setActive=p=>navLinks.forEach(a=>a.classList.toggle('active',(a.dataset.h||a.getAttribute('href'))===p));
+setActive(document.body.dataset.page||location.pathname);
+navLinks.forEach(a=>{if(!a.hasAttribute('data-sm'))a.addEventListener('click',()=>setActive((a.dataset.h||a.getAttribute('href'))))});
+
+const sm=document.getElementById('sm');
+let smLast=null;
+const smOpen=e=>{e.preventDefault();smLast=document.activeElement;mob.classList.remove('open');sm.hidden=false;document.body.classList.add('sm-open');sm.querySelector('.sm-chip').focus()};
+const smClose=()=>{sm.hidden=true;document.body.classList.remove('sm-open');if(smLast)smLast.focus()};
+document.querySelectorAll('[data-sm]').forEach(a=>a.addEventListener('click',smOpen));
+sm.querySelectorAll('[data-close]').forEach(x=>x.addEventListener('click',smClose));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!sm.hidden)smClose()});
+
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target)}}),{threshold:.35});
+  document.querySelectorAll('.skyline-svg').forEach(s=>{
+    s.querySelectorAll('.lm path,.lm rect,.lm circle').forEach(el=>el.setAttribute('pathLength','1'));
+    s.classList.add('pre');
+    requestAnimationFrame(()=>io.observe(s));
+  });
+}
+
+
+</script>
+</body>
+</html>
