@@ -374,6 +374,19 @@ a.card .go{margin-top:auto;padding-top:6px;font-size:14.5px;font-weight:600;colo
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2.5px solid var(--red);outline-offset:3px}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.dbar i,.rbar i{animation:none;width:35%}html{scroll-behavior:auto}}
+@media(min-width:1080px){
+  .skyline{padding-top:20px}
+  .skyline-svg{width:min(820px,100%)}
+  .ft-main{padding-top:36px;gap:56px}
+  .ft-col h4{margin-bottom:12px;font-size:14.5px}
+  .ft-col ul{gap:8px}
+  .ft-col a{font-size:14px}
+  .ft-areas{grid-column:1/-1}
+  .chips-sm a{padding:6px 11px;font-size:13px}
+  .ft-card{padding:18px;margin-top:18px}
+  .ft-bottom{margin-top:32px;padding-top:18px;padding-bottom:22px}
+}
+.ft-col.social > h4:first-child{margin-top:0!important}
 
 
 </style>
@@ -696,7 +709,8 @@ const setLogo=p=>{if(!okPath(p,'assets/'))return;document.querySelectorAll('.log
 try{const c=localStorage.getItem('ugc_logo');if(c)setLogo(c)}catch(e){}
 window.SITE=fetch(ROOT+'data/site.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.videolar))d.videolar=d.videolar.filter(v=>okPath(v.src,'videos/')&&(!v.poster||okPath(v.poster,'videos/')));return d}).catch(()=>null);
 SITE.then(d=>{
-  if(!d)return;
+  const soc=()=>{const s=document.querySelector('.ft-col.social');if(!s)return;const ul=s.querySelector('ul');ul.querySelectorAll('a[href="#"]').forEach(x=>x.closest('li').remove());if(!ul.children.length){const h=s.querySelector('h4');h.remove();ul.remove()}};
+  if(!d){soc();return}
   const a=d.ayarlar||{};
   try{if(a.logo){setLogo(a.logo);localStorage.setItem('ugc_logo',a.logo)}else localStorage.removeItem('ugc_logo')}catch(e){}
   const tel=String(a.telefon||'').replace(/\D/g,'');
@@ -706,7 +720,7 @@ SITE.then(d=>{
     const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
     while(n=w.nextNode())if(n.nodeValue.includes('0542 218 48 41'))n.nodeValue=n.nodeValue.replace(/0542 218 48 41/g,show);
   }
-  document.querySelectorAll('[data-soc]').forEach(x=>{const u=a[x.dataset.soc];if(u&&okUrl(u)){x.href=u;x.target='_blank';x.rel='noopener noreferrer'}else x.closest('li').remove()});
+  document.querySelectorAll('[data-soc]').forEach(x=>{const u=a[x.dataset.soc];if(u&&okUrl(u)){x.href=u;x.target='_blank';x.rel='noopener noreferrer'}else x.closest('li').remove()});soc();
   document.querySelectorAll('[data-k]').forEach(x=>{const v=x.dataset.k.split('.').reduce((o,k)=>o&&o[k],d);if(typeof v==='string'&&v.trim()||typeof v==='number')x.textContent=v});
 });
 window.videoCard=v=>`<article class="item" data-cat="${esc(v.sektor)}"><div class="vid" data-src="${esc(ROOT+v.src)}"><span class="sector">${esc(SEKTOR[v.sektor]||'')}</span>${v.poster?`<img class="pv" src="${esc(ROOT+v.poster)}" alt="${esc(v.isletme)} UGC video" loading="lazy" decoding="async">`:''}<span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div><div class="meta"><h3>${esc(v.isletme)}</h3><p>${esc(SEKTOR[v.sektor]||'')}</p></div></article>`;
