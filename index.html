@@ -328,6 +328,52 @@ a.card .go{margin-top:auto;padding-top:6px;font-size:14.5px;font-weight:600;colo
 .ph.playing .play{opacity:0}
 .ph .play{z-index:1;transition:opacity .2s}
 @media(max-width:380px){.logo img{height:26px;max-width:140px}}
+.dv{cursor:default;border:0;color:#fff;isolation:isolate}
+.dv::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--grain);opacity:.18;mix-blend-mode:overlay}
+.dv.ga{background:radial-gradient(70% 55% at 25% 20%,#FFC27A 0%,rgba(255,194,122,0) 70%),radial-gradient(80% 60% at 85% 95%,#E30613 0%,rgba(227,6,19,0) 70%),linear-gradient(165deg,#5A2412,#2A0D07)}
+.dv.gb{background:radial-gradient(70% 55% at 75% 18%,#FFB3CF 0%,rgba(255,179,207,0) 70%),radial-gradient(80% 60% at 15% 95%,#FF4D8D 0%,rgba(255,77,141,0) 70%),linear-gradient(165deg,#5B1638,#220714)}
+.dv.gc{background:radial-gradient(70% 55% at 30% 15%,#9FE3F5 0%,rgba(159,227,245,0) 70%),radial-gradient(80% 60% at 80% 95%,#F59E5B 0%,rgba(245,158,91,0) 70%),linear-gradient(170deg,#0F4E66,#0A1F2E)}
+.dv.gd{background:radial-gradient(70% 55% at 70% 20%,#F2C6A8 0%,rgba(242,198,168,0) 70%),radial-gradient(80% 60% at 20% 95%,#B0122A 0%,rgba(176,18,42,0) 70%),linear-gradient(165deg,#4A1520,#1C0609)}
+.dv.ge{background:radial-gradient(70% 55% at 30% 20%,#F7D58B 0%,rgba(247,213,139,0) 70%),radial-gradient(80% 60% at 85% 95%,#A3541B 0%,rgba(163,84,27,0) 70%),linear-gradient(165deg,#4D2E10,#1E1206)}
+.dv.gf{background:radial-gradient(70% 55% at 70% 18%,#CFE8FF 0%,rgba(207,232,255,0) 70%),radial-gradient(80% 60% at 20% 95%,#4C7CF0 0%,rgba(76,124,240,0) 70%),linear-gradient(170deg,#1D3A6B,#0B1428)}
+.dv.gg{background:radial-gradient(70% 55% at 25% 20%,#A7E8C8 0%,rgba(167,232,200,0) 70%),radial-gradient(80% 60% at 85% 95%,#1F8A70 0%,rgba(31,138,112,0) 70%),linear-gradient(170deg,#0F3D33,#061712)}
+.dv.gh{background:radial-gradient(70% 55% at 75% 20%,#FFD9A0 0%,rgba(255,217,160,0) 70%),radial-gradient(80% 60% at 20% 95%,#E30613 0%,rgba(227,6,19,0) 70%),linear-gradient(165deg,#3B1A2E,#14070F)}
+.dv .sector{z-index:2;color:var(--ink)}
+.dbadge{position:absolute;right:8px;top:8px;font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.22);display:none}
+.dtxt{position:absolute;left:12px;right:12px;bottom:22px;display:flex;flex-direction:column;gap:8px}
+.dtxt p{font-size:clamp(14px,1.5vw,17px);font-weight:600;line-height:1.28;letter-spacing:-.015em;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.dtxt small{align-self:flex-start;font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:8px;background:#fff;color:var(--ink)}
+.dbar,.rbar{position:absolute;left:12px;right:12px;bottom:10px;height:3px;border-radius:3px;background:rgba(255,255,255,.28);overflow:hidden}
+.dbar i,.rbar i{display:block;height:100%;width:0;background:#fff;border-radius:3px;animation:prog 9s linear infinite}
+.item:nth-child(2n) .dbar i{animation-delay:-3s}
+.item:nth-child(3n) .dbar i{animation-delay:-6s}
+@keyframes prog{to{width:100%}}
+.vid.dv{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.item:hover .vid.dv{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(31,27,24,.5)}
+@media(min-width:700px){.dbadge{display:block}}
+.reel{position:absolute;inset:0;color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+.reel::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--grain);opacity:.16;mix-blend-mode:overlay}
+.reel.ra{background:radial-gradient(70% 50% at 30% 30%,#FFC27A 0%,rgba(255,194,122,0) 70%),radial-gradient(90% 60% at 80% 100%,#E30613 0%,rgba(227,6,19,0) 70%),linear-gradient(170deg,#6B2B14,#260B06)}
+.reel.rb{background:radial-gradient(70% 50% at 70% 25%,#FFB3CF 0%,rgba(255,179,207,0) 70%),radial-gradient(90% 60% at 20% 100%,#FF4D8D 0%,rgba(255,77,141,0) 70%),linear-gradient(170deg,#5B1638,#1E0611)}
+.rtop{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600}
+.rtop i{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#fff,#FFD0DA);border:1.5px solid rgba(255,255,255,.8)}
+.rtop em{font-style:normal;font-weight:500;opacity:.75;font-size:11px}
+.rside{position:absolute;right:12px;bottom:92px;display:flex;flex-direction:column;gap:16px}
+.rside svg{width:22px;height:22px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.rcap{display:flex;flex-direction:column;gap:9px;padding-right:40px;margin-bottom:14px}
+.rcap p{font-size:16px;font-weight:600;line-height:1.28;letter-spacing:-.015em;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.rcap span{align-self:flex-start;font-size:12px;font-weight:600;padding:6px 10px;border-radius:9px;background:#fff;color:var(--ink)}
+.rb .rcap p{font-size:14px}
+.rb .rcap{padding-right:0}
+.ph:not(.has) .play{display:none}
+.ph.has .reel{display:none}
+.ph{border:0!important}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.8,.2,1) var(--rd,0s),transform .8s cubic-bezier(.2,.8,.2,1) var(--rd,0s)}
+.rv.in{opacity:1;transform:none}
+::selection{background:#FFD3DA;color:var(--ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2.5px solid var(--red);outline-offset:3px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.dbar i,.rbar i{animation:none;width:35%}html{scroll-behavior:auto}}
 
 .pill-sparkle{margin-bottom:20px}
 .hero{padding-top:40px;padding-bottom:40px;display:grid;gap:44px;align-items:center}
@@ -345,18 +391,20 @@ a.card .go{margin-top:auto;padding-top:6px;font-size:14.5px;font-weight:600;colo
 .ph1{width:58%;left:6%;top:0;z-index:2}
 .ph2{width:50%;right:0;top:40px;z-index:1}
 .ph2 .lbl{display:none}
+.reel.rb{padding-left:32%}
+.rb .rcap{margin-bottom:26px}
 .float{position:absolute;z-index:3;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px -22px rgba(31,27,24,.35);font-size:13px;font-weight:600}
-.f-creators{left:0;top:28px;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px}
+.f-creators{left:-2%;top:44%;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px}
 .f-creators .avs{display:flex}
 .f-creators .avs i{width:28px;height:28px;border-radius:50%;border:2px solid #fff;margin-left:-8px;display:block}
 .f-creators .avs i:first-child{margin-left:0}
 .f-creators b{display:block;font-size:17px;letter-spacing:-.02em}
 .f-creators small{display:block;font-size:11.5px;color:var(--ink-soft);font-weight:500}
-.f-platforms{left:4%;bottom:12px;padding:12px 14px;text-align:center}
+.f-platforms{right:2%;left:auto;bottom:-14px;padding:12px 14px;text-align:center}
 .f-platforms small{display:block;font-size:11.5px;color:var(--ink-soft);font-weight:500;margin-bottom:8px}
 .f-platforms div{display:flex;gap:8px;justify-content:center}
 .f-platforms svg{width:20px;height:20px;color:var(--red)}
-.f-sectors{right:-4px;top:56%;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.f-sectors{right:-10px;top:14%;display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .f-sectors span{width:58px;height:58px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 26px -18px rgba(31,27,24,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10.5px;font-weight:600}
 .f-sectors svg{width:18px;height:18px}
 
@@ -515,8 +563,8 @@ td.hl .tv{color:var(--red)}
 .creators .btn-row{margin-top:26px}
 .cr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .cr-card .vid{cursor:default}
-.cr-card h4{font-size:16px;font-weight:600;margin-top:10px}
-.cr-card p{font-size:13.5px;color:var(--ink-soft);font-weight:500}
+.cr-card > h4{font-size:16px;font-weight:600;margin-top:10px}
+.cr-card > p{font-size:13.5px;color:var(--ink-soft);font-weight:500}
 
 .cta-band{margin-top:0}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}}
@@ -545,7 +593,7 @@ td.hl .tv{color:var(--red)}
   .creators{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
 }
 .chips{flex-wrap:wrap;overflow:visible!important;margin:0!important;padding:0!important}
-@media(max-width:699px){.chip{height:38px;padding:0 14px;font-size:14px}}
+@media(max-width:699px){.chip{height:38px;padding:0 14px;font-size:14px}.f-sectors{display:none!important}.f-creators{top:-16px;left:-2%}.f-platforms{bottom:-22px;right:auto;left:22%}.rcap p{font-size:14.5px}.rside{bottom:84px}}
 .cmp-pick{display:flex;gap:6px;margin:-10px 0 22px;padding:4px;border-radius:999px;background:var(--soft)}
 .cmp-pick span{display:none}
 .cmp-pick button{flex:1;min-width:0;height:38px;padding:0 6px;border:0!important;background:none!important;font-size:13.5px!important;white-space:nowrap;border-radius:999px;border:1.5px solid #D9D6D0;background:#fff;font:inherit;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer}
@@ -641,8 +689,8 @@ td.hl .tv{color:var(--red)}
     </div>
   </div>
   <div class="stage">
-    <div class="ph ph1"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><span class="lbl">Video 1</span></div>
-    <div class="ph ph2"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><span class="lbl">Video 2</span></div>
+    <div class="ph ph1"><div class="reel ra"><span class="rtop"><i></i>antalyaugc<em>Sponsorlu</em></span><div class="rside"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.6 1-1.1a5.5 5.5 0 0 0 0-7.7z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></div><div class="rcap"><p>“Lara'da bu fiyata serpme kahvaltı olduğunu bilmiyordum.”</p><span>Serpme kahvaltı · 450 TL</span></div><span class="rbar"><i></i></span></div><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div>
+    <div class="ph ph2"><div class="reel rb"><span class="rtop"><i></i>antalyaugc</span><div class="rcap"><p>“Rengimi ilk kez burada tutturdular.”</p><span>Dip boya + bakım</span></div><span class="rbar"><i></i></span></div><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div>
     <div class="float f-creators"><span class="avs"><i style="background:#F4C7B8"></i><i style="background:#E7B9D6"></i><i style="background:#C9D8F0"></i><i style="background:#F2D9A6"></i></span><span><b>Antalyalı</b><small>içerik üreticileri</small></span></div>
     <div class="float f-platforms"><small>Tüm platformlar için</small><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></div></div>
     <div class="f-sectors float" style="background:none;border:0;box-shadow:none"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v6M3 3v6a4 4 0 0 0 4 4"/><path d="M17 21V3c2.5 1 4 4 4 8h-4"/></svg>Restoran</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg>Güzellik</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V8l9-5 9 5v12"/><path d="M3 20h18M9 20v-6h6v6"/></svg>Otel</span><span>+ Daha</span></div>
@@ -732,37 +780,37 @@ td.hl .tv{color:var(--red)}
         <button class="chip" type="button" data-f="oto">Oto Servis</button>
   </div>
   <div class="grid">
-      <article class="item" data-cat="restoran">
-        <div class="vid" data-src=""><span class="sector">Restoran & Kafe</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 1</h3><p>Çeken: <b>Ayşe</b></p></div>
+      <article class="item demo" data-cat="restoran">
+        <div class="vid dv ga"><span class="sector">Restoran & Kafe</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Lara'da bu fiyata serpme kahvaltı olduğunu bilmiyordum.”</p><small>Serpme kahvaltı · 450 TL</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Kahvaltı mekanı</h3><p>Restoran & Kafe</p></div>
       </article>
-      <article class="item" data-cat="guzellik">
-        <div class="vid" data-src=""><span class="sector">Kuaför & Güzellik</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 2</h3><p>Çeken: <b>Mert</b></p></div>
+      <article class="item demo" data-cat="guzellik">
+        <div class="vid dv gb"><span class="sector">Kuaför & Güzellik</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“3 kuaför değiştirdim, rengimi ilk kez burada tutturdular.”</p><small>Dip boya + bakım</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Kuaför salonu</h3><p>Kuaför & Güzellik</p></div>
       </article>
-      <article class="item" data-cat="otel">
-        <div class="vid" data-src=""><span class="sector">Otel & Turizm</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 3</h3><p>Çeken: <b>Elif</b></p></div>
+      <article class="item demo" data-cat="otel">
+        <div class="vid dv gc"><span class="sector">Otel & Turizm</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Bu manzara için gelmiştik, asıl kahvaltı şaşırttı.”</p><small>Deniz manzaralı oda</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Butik otel</h3><p>Otel & Turizm</p></div>
       </article>
-      <article class="item" data-cat="magaza">
-        <div class="vid" data-src=""><span class="sector">Butik & Mağaza</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 4</h3><p>Çeken: <b>Can</b></p></div>
+      <article class="item demo" data-cat="magaza">
+        <div class="vid dv gd"><span class="sector">Butik & Mağaza</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Düğün için 4 elbise denedim, bakın hangisini aldım.”</p><small>Abiye · tadilat dahil</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Abiye butiği</h3><p>Butik & Mağaza</p></div>
       </article>
-      <article class="item" data-cat="gida">
-        <div class="vid" data-src=""><span class="sector">Gıda & Market</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 5</h3><p>Çeken: <b>Zeynep</b></p></div>
+      <article class="item demo" data-cat="gida">
+        <div class="vid dv ge"><span class="sector">Gıda & Market</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Antalya'da kilosu bu fiyata fıstık bulana çay ısmarlarım.”</p><small>Günlük kavrulmuş</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Kuruyemişçi</h3><p>Gıda & Market</p></div>
       </article>
-      <article class="item" data-cat="restoran">
-        <div class="vid" data-src=""><span class="sector">Restoran & Kafe</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 6</h3><p>Çeken: <b>Emre</b></p></div>
+      <article class="item demo" data-cat="saglik">
+        <div class="vid dv gf"><span class="sector">Klinik & Sağlık</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Dişçi koltuğundan çocukluğumdan beri korkuyordum.”</p><small>Ücretsiz ön görüşme</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Diş kliniği</h3><p>Klinik & Sağlık</p></div>
       </article>
-      <article class="item" data-cat="guzellik">
-        <div class="vid" data-src=""><span class="sector">Kuaför & Güzellik</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 7</h3><p>Çeken: <b>Selin</b></p></div>
+      <article class="item demo" data-cat="hizmet">
+        <div class="vid dv gg"><span class="sector">Yerel Hizmetler</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Mutfakta su sızıyordu, duvarı kırmadan buldular.”</p><small>Kameralı kaçak tespiti</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Tesisatçı</h3><p>Yerel Hizmetler</p></div>
       </article>
-      <article class="item" data-cat="saglik">
-        <div class="vid" data-src=""><span class="sector">Klinik & Sağlık</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div>
-        <div class="meta"><h3>İşletme Adı 8</h3><p>Çeken: <b>Burak</b></p></div>
+      <article class="item demo" data-cat="eticaret">
+        <div class="vid dv gh"><span class="sector">E-ticaret</span><span class="dbadge">Örnek kurgu</span><div class="dtxt"><p>“Siparişi dün verdim, bugün geldi, açıyorum.”</p><small>Ertesi gün kargo</small></div><span class="dbar"><i></i></span></div>
+        <div class="meta"><h3>Online mağaza</h3><p>E-ticaret</p></div>
       </article>
   </div>
   <div class="show-more"><a class="btn btn-line" href="calismalar" data-h="/calismalar">Tüm çalışmaları gör</a></div>
@@ -860,10 +908,10 @@ td.hl .tv{color:var(--red)}
       </div>
     </div>
     <div class="cr-grid">
-      <div class="cr-card"><div class="vid"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div><h4>Ayşe</h4><p>Lifestyle</p></div>
-      <div class="cr-card"><div class="vid"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div><h4>Mert</h4><p>Yemek</p></div>
-      <div class="cr-card"><div class="vid"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div><h4>Elif</h4><p>Güzellik</p></div>
-      <div class="cr-card"><div class="vid"><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span></div><h4>Can</h4><p>Otel & Seyahat</p></div>
+      <div class="cr-card"><div class="vid dv ga"><div class="dtxt"><p>“Bu hafta keşfettiğim 3 yer.”</p><small>Restoran · market · hizmet</small></div></div><h4>Lifestyle</h4><p>Günlük hayattan, arkadaşına anlatır gibi</p></div>
+      <div class="cr-card"><div class="vid dv ge"><div class="dtxt"><p>“İlk lokmada anladım.”</p><small>Restoran · kafe · fırın</small></div></div><h4>Yemek & mekan</h4><p>Tabağı ve ortamı iştah açarak anlatan</p></div>
+      <div class="cr-card"><div class="vid dv gb"><div class="dtxt"><p>“Aynaya ilk baktığım an.”</p><small>Kuaför · klinik · spa</small></div></div><h4>Güzellik & bakım</h4><p>Değişimi ve hissi doğal gösteren</p></div>
+      <div class="cr-card"><div class="vid dv gc"><div class="dtxt"><p>“3 günlük Kemer kaçamağı.”</p><small>Otel · tur · beach club</small></div></div><h4>Otel & seyahat</h4><p>Tatili misafir gözünden yaşatan</p></div>
     </div>
   </div>
 </section>
@@ -1112,7 +1160,7 @@ SITE.then(d=>{
   document.querySelectorAll('[data-soc]').forEach(x=>{const u=a[x.dataset.soc];if(u&&okUrl(u)){x.href=u;x.target='_blank';x.rel='noopener noreferrer'}else x.closest('li').remove()});
   document.querySelectorAll('[data-k]').forEach(x=>{const v=x.dataset.k.split('.').reduce((o,k)=>o&&o[k],d);if(typeof v==='string'&&v.trim()||typeof v==='number')x.textContent=v});
 });
-window.videoCard=v=>`<article class="item" data-cat="${esc(v.sektor)}"><div class="vid" data-src="${esc(ROOT+v.src)}"><span class="sector">${esc(SEKTOR[v.sektor]||'')}</span>${v.poster?`<img class="pv" src="${esc(ROOT+v.poster)}" alt="${esc(v.isletme)} UGC video" loading="lazy" decoding="async">`:''}<span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div><div class="meta"><h3>${esc(v.isletme)}</h3>${v.uretici?`<p>Çeken: <b>${esc(v.uretici)}</b></p>`:''}</div></article>`;
+window.videoCard=v=>`<article class="item" data-cat="${esc(v.sektor)}"><div class="vid" data-src="${esc(ROOT+v.src)}"><span class="sector">${esc(SEKTOR[v.sektor]||'')}</span>${v.poster?`<img class="pv" src="${esc(ROOT+v.poster)}" alt="${esc(v.isletme)} UGC video" loading="lazy" decoding="async">`:''}<span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div><div class="meta"><h3>${esc(v.isletme)}</h3><p>${esc(SEKTOR[v.sektor]||'')}</p></div></article>`;
 const stopAll=keep=>document.querySelectorAll('.vid video,.ph video').forEach(o=>{if(o!==keep){o.pause();o.parentElement.classList.remove('playing')}});
 window.makePlayable=(box,src,muted)=>{
   let vid=null;
@@ -1126,6 +1174,14 @@ window.makePlayable=(box,src,muted)=>{
 window.bindVideos=root=>root.querySelectorAll('.vid').forEach(v=>{
   const src=v.dataset.src;if(!src||v.dataset.bound)return;v.dataset.bound=1;makePlayable(v,src,true);
 });
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  window.revealIn=root=>(root||document).querySelectorAll('.sec-head,.center-head,.cards > *,.cards3 > *,.grid > .item,.plan,.bento > *,.faq details,.cta-band .grad-box,.steps-wrap,.cmp-wrap,.prose > *,.ft-main').forEach(el=>{
+    if(el.classList.contains('rv')||el.closest('.hdr-wrap'))return;
+    const sib=[...el.parentElement.children].indexOf(el);el.style.setProperty('--rd',Math.min(sib,6)*.06+'s');el.classList.add('rv');ro.observe(el);
+  });
+  revealIn();
+}else window.revealIn=()=>{};
 
 const grid=document.querySelector('.showcase .grid');
 SITE.then(d=>{
@@ -1137,7 +1193,7 @@ SITE.then(d=>{
     const f=c.dataset.f;let n=0;
     its.forEach(i=>{const ok=(f==='all'||i.dataset.cat===f)&&n<8;i.classList.toggle('hide',!ok);if(ok)n++});
   }));
-  bindVideos(grid);
+  bindVideos(grid);revealIn(grid);
   const hero=(all.filter(v=>v.anasayfa).length?all.filter(v=>v.anasayfa):all).slice(0,2);
   document.querySelectorAll('.stage .ph').forEach((ph,i)=>{const v=hero[i];if(!v)return;ph.classList.add('has');if(v.poster)ph.insertAdjacentHTML('afterbegin',`<img class="pv" src="${ROOT+v.poster}" alt="" decoding="async">`);makePlayable(ph,ROOT+v.src,false)});
 });

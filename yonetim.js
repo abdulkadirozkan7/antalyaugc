@@ -45,7 +45,6 @@ function renderList(){
     <div class="th"${x.poster?` style="background-image:url('${esc(siteUrl()+x.poster)}')"`:''}></div>
     <div class="f">
       <input class="in" data-e="isletme" value="${esc(x.isletme)}" placeholder="İşletme adı">
-      <input class="in" data-e="uretici" value="${esc(x.uretici)}" placeholder="Çeken">
       <select class="in" data-e="sektor">${opts(x.sektor)}</select>
       <div class="acts">
         <label class="chk"><input type="checkbox" data-e="anasayfa"${x.anasayfa?' checked':''}>Ana sayfa</label>
@@ -106,10 +105,10 @@ $('#vUp').addEventListener('click',async()=>{
     step(35,'Video hazırlanıyor…');const vb=await fileB64(f);
     step(55,'Video yükleniyor… (büyük videolarda 1–2 dk sürebilir)');await putFile(base+'.'+ext,vb,'Panel: video eklendi: '+isl);
     step(85,'Siteye ekleniyor…');
-    data.videolar.unshift({isletme:isl,uretici:$('#vUretici').value.trim(),sektor:$('#vSektor').value,anasayfa:$('#vAna').checked,src:base+'.'+ext,poster:posterPath});
+    data.videolar.unshift({isletme:isl,sektor:$('#vSektor').value,anasayfa:$('#vAna').checked,src:base+'.'+ext,poster:posterPath});
     await saveData('Panel: video listesi güncellendi');
     step(100,'Tamam');renderList();
-    $('#vFile').value='';$('#vIsletme').value='';$('#vUretici').value='';$('#vFile').dispatchEvent(new Event('change'));
+    $('#vFile').value='';$('#vIsletme').value='';$('#vFile').dispatchEvent(new Event('change'));
     toast('Video yüklendi. 1–2 dakika içinde sitede görünür.');
   }catch(err){toast('Yüklenemedi: '+err.message,1)}
   btn.disabled=false;btn.textContent='Yükle ve yayınla';setTimeout(()=>{pg.classList.add('hidden');bar.style.width=0},800);
