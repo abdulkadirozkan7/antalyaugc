@@ -6,8 +6,11 @@
 <title>Gizlilik ve Çerez Politikası | Antalya UGC</title>
 <meta name="description" content="Antalya UGC gizlilik ve çerez politikası.">
 <meta name="theme-color" content="#E30613">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.fontshare.com; font-src 'self' data: https://cdn.fontshare.com https://api.fontshare.com; img-src 'self' data: https:; media-src 'self' https: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E30613'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'%3EAU%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Antalya UGC","telephone":"+90 542 218 48 41","address":{"@type":"PostalAddress","addressLocality":"Antalya","addressCountry":"TR"},"areaServed":["Antalya","Konyaaltı","Muratpaşa","Kepez","Lara","Kemer","Belek","Manavgat","Alanya"],"parentOrganization":{"@type":"Organization","name":"Özkan Dijital"}}</script>
 <style>
@@ -318,6 +321,13 @@ a.card .go{margin-top:auto;padding-top:6px;font-size:14.5px;font-weight:600;colo
 @media(min-width:1080px) and (max-width:1279px){.nav a{padding:9px 10px;font-size:15px}.creator-link{font-size:15px;margin-right:4px}}
 .skyline{padding-top:28px}
 @media(max-width:699px){.skyline-svg{width:max(500px,100%)}.skyline{padding-top:18px}}
+.logo img{height:30px;width:auto;max-width:180px;object-fit:contain;display:block}
+.vid img.pv,.ph img.pv,.ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ph.has .lbl{display:none}
+.ph.has{cursor:pointer}
+.ph.playing .play{opacity:0}
+.ph .play{z-index:1;transition:opacity .2s}
+@media(max-width:380px){.logo img{height:26px;max-width:140px}}
 
 
 </style>
@@ -608,32 +618,39 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserve
 }
 const ROOT=window.ROOT||'./';
 const SEKTOR={restoran:'Restoran & Kafe',guzellik:'Kuaför & Güzellik',otel:'Otel & Turizm',magaza:'Butik & Mağaza',saglik:'Klinik & Sağlık',gida:'Gıda & Market',hizmet:'Yerel Hizmetler',eticaret:'E-ticaret',egitim:'Eğitim & Kurs',emlak:'Emlak & İnşaat',oto:'Oto Servis'};
-const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-window.SITE=fetch(ROOT+'data/site.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const okPath=(p,dir)=>typeof p==='string'&&p.startsWith(dir)&&!p.includes('..')&&/^[a-z0-9\/._-]+$/i.test(p);
+const okUrl=u=>{try{const x=new URL(u);return x.protocol==='https:'}catch(e){return false}};
+const setLogo=p=>{if(!okPath(p,'assets/'))return;document.querySelectorAll('.logo').forEach(l=>{if(l.dataset.img===p)return;l.dataset.img=p;l.textContent='';const i=new Image();i.src=ROOT+p;i.alt='Antalya UGC';i.decoding='async';l.appendChild(i)})};
+try{const c=localStorage.getItem('ugc_logo');if(c)setLogo(c)}catch(e){}
+window.SITE=fetch(ROOT+'data/site.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.videolar))d.videolar=d.videolar.filter(v=>okPath(v.src,'videos/')&&(!v.poster||okPath(v.poster,'videos/')));return d}).catch(()=>null);
 SITE.then(d=>{
   if(!d)return;
   const a=d.ayarlar||{};
-  const tel=(a.telefon||'').replace(/\D/g,'');
-  if(tel&&tel!=='905422184841'){
+  try{if(a.logo){setLogo(a.logo);localStorage.setItem('ugc_logo',a.logo)}else localStorage.removeItem('ugc_logo')}catch(e){}
+  const tel=String(a.telefon||'').replace(/\D/g,'');
+  if(/^90\d{10}$/.test(tel)&&tel!=='905422184841'){
     document.querySelectorAll('a[href*="905422184841"]').forEach(x=>x.href=x.href.replace(/905422184841/g,tel));
     const show='0'+tel.slice(2,5)+' '+tel.slice(5,8)+' '+tel.slice(8,10)+' '+tel.slice(10);
     const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
     while(n=w.nextNode())if(n.nodeValue.includes('0542 218 48 41'))n.nodeValue=n.nodeValue.replace(/0542 218 48 41/g,show);
   }
-  document.querySelectorAll('[data-soc]').forEach(x=>{const u=a[x.dataset.soc];if(u){x.href=u;x.target='_blank';x.rel='noopener'}else x.closest('li').remove()});
-  document.querySelectorAll('[data-k]').forEach(x=>{const v=x.dataset.k.split('.').reduce((o,k)=>o&&o[k],d);if(v!==undefined&&v!==null&&v!=='')x.textContent=v});
+  document.querySelectorAll('[data-soc]').forEach(x=>{const u=a[x.dataset.soc];if(u&&okUrl(u)){x.href=u;x.target='_blank';x.rel='noopener noreferrer'}else x.closest('li').remove()});
+  document.querySelectorAll('[data-k]').forEach(x=>{const v=x.dataset.k.split('.').reduce((o,k)=>o&&o[k],d);if(typeof v==='string'&&v.trim()||typeof v==='number')x.textContent=v});
 });
-window.videoCard=v=>`<article class="item" data-cat="${esc(v.sektor)}"><div class="vid" data-src="${esc(ROOT+v.src)}"${v.poster?` data-poster="${esc(ROOT+v.poster)}"`:''}><span class="sector">${esc(SEKTOR[v.sektor]||'')}</span><span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div><div class="meta"><h3>${esc(v.isletme)}</h3>${v.uretici?`<p>Çeken: <b>${esc(v.uretici)}</b></p>`:''}</div></article>`;
-window.bindVideos=root=>root.querySelectorAll('.vid').forEach(v=>{
-  const src=v.dataset.src;if(!src||v.dataset.bound)return;v.dataset.bound=1;
-  const vid=document.createElement('video');vid.src=src;vid.muted=true;vid.loop=true;vid.playsInline=true;vid.preload='metadata';
-  if(v.dataset.poster)vid.poster=v.dataset.poster;
-  v.prepend(vid);
-  v.addEventListener('click',e=>{
+window.videoCard=v=>`<article class="item" data-cat="${esc(v.sektor)}"><div class="vid" data-src="${esc(ROOT+v.src)}"><span class="sector">${esc(SEKTOR[v.sektor]||'')}</span>${v.poster?`<img class="pv" src="${esc(ROOT+v.poster)}" alt="${esc(v.isletme)} UGC video" loading="lazy" decoding="async">`:''}<span class="play"><svg viewBox="0 0 24 24" fill="#1F1B18"><path d="M6 4v16l14-8z"/></svg></span><button class="sound" type="button" aria-label="Sesi aç"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg></button></div><div class="meta"><h3>${esc(v.isletme)}</h3>${v.uretici?`<p>Çeken: <b>${esc(v.uretici)}</b></p>`:''}</div></article>`;
+const stopAll=keep=>document.querySelectorAll('.vid video,.ph video').forEach(o=>{if(o!==keep){o.pause();o.parentElement.classList.remove('playing')}});
+window.makePlayable=(box,src,muted)=>{
+  let vid=null;
+  box.addEventListener('click',e=>{
+    if(!vid){vid=document.createElement('video');vid.src=src;vid.muted=muted;vid.loop=true;vid.playsInline=true;vid.preload='auto';const pv=box.querySelector('img.pv');if(pv)vid.poster=pv.src;box.prepend(vid)}
     if(e.target.closest('.sound')){vid.muted=!vid.muted;return}
-    document.querySelectorAll('.vid video').forEach(o=>{if(o!==vid){o.pause();o.parentElement.classList.remove('playing')}});
-    if(vid.paused){vid.play();v.classList.add('playing')}else{vid.pause();v.classList.remove('playing')}
+    stopAll(vid);
+    if(vid.paused){vid.play().catch(()=>{});box.classList.add('playing')}else{vid.pause();box.classList.remove('playing')}
   });
+};
+window.bindVideos=root=>root.querySelectorAll('.vid').forEach(v=>{
+  const src=v.dataset.src;if(!src||v.dataset.bound)return;v.dataset.bound=1;makePlayable(v,src,true);
 });
 
 
